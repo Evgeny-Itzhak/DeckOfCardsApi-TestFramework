@@ -10,17 +10,17 @@ public enum HttpMethod {
             return request.get(url);
         }
     },
-    PUT("GET") {
+    PUT("PUT") {
         public Response sendRequest(String url, RequestSpecification request) {
             return request.get(url);
         }
     },
-    POST("GET") {
+    POST("POST") {
         public Response sendRequest(String url, RequestSpecification request) {
             return request.get(url);
         }
     },
-    DELETE("GET") {
+    DELETE("DELETE") {
         public Response sendRequest(String url, RequestSpecification request) {
             return request.get(url);
         }

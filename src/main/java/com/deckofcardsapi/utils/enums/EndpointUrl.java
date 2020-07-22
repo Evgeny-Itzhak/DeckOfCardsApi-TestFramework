@@ -2,6 +2,7 @@ package com.deckofcardsapi.utils.enums;
 
 public enum EndpointUrl {
 
+    NEW("new/"),
     NEW_SHUFFLE("new/shuffle/"),
     DRAW("draw/");
 

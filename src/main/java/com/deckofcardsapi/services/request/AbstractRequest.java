@@ -1,4 +1,4 @@
-package com.deckofcardsapi.services;
+package com.deckofcardsapi.services.request;
 
 
 import com.deckofcardsapi.utils.enums.EndpointUrl;
@@ -18,6 +18,10 @@ public abstract class AbstractRequest {
     private Map<String, String> headers = new HashMap<>();
     private Map<String, String> queryParameters = new HashMap<>();
     private Object requestBody;
+
+    protected AbstractRequest() {
+        this.httpMethod = HttpMethod.GET;
+    }
 
     protected AbstractRequest(String url) {
         this.httpMethod = HttpMethod.GET;
