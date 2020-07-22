@@ -97,8 +97,8 @@ public class RESTHandler {
                     formattedJson = ((JSONObject) jsonResponse).toString(4);
                 } else {
                     formattedJson = response.asString();
-                    loggedResponse.append(formattedJson);
                 }
+                loggedResponse.append(formattedJson);
             }
         }
         log.info(String.valueOf(loggedResponse));
