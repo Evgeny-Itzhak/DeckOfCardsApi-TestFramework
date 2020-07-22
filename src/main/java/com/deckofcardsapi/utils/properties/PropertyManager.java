@@ -6,7 +6,7 @@ import org.aeonbits.owner.ConfigFactory;
 import java.util.HashMap;
 import java.util.Map;
 
-class PropertyManager {
+public class PropertyManager {
 
     /**
      * Create a Config object to work with BASE_URL.
@@ -14,11 +14,10 @@ class PropertyManager {
      * @return instance of base_url properties
      */
 
-    Environment getEnvironmentConfiguration() {
+    public Environment getEnvironmentConfiguration() {
         return ConfigFactory.create(Environment.class, setEnvironment());
 
     }
-
 
     private Map<String, String> setEnvironment() {
 
