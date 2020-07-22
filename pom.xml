@@ -20,6 +20,7 @@
         <jackson.core.version>2.11.1</jackson.core.version>
         <slf4j.version>1.7.30</slf4j.version>
         <lomboc.version>1.18.12</lomboc.version>
+        <owner.version>1.0.12</owner.version>
     </properties>
 
     <dependencies>
@@ -58,6 +59,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lomboc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aeonbits.owner</groupId>
+            <artifactId>owner</artifactId>
+            <version>${owner.version}</version>
         </dependency>
     </dependencies>
 
