@@ -29,20 +29,20 @@ public class GetDrawCardTest {
     public void getDrawCard(int numberOfCardsToDraw) {
 
         log.info("Get Brand New Deck");
-        RESTResponse<BrandNewDeckDTO> getBrandNewDeck = brandNewDeckService.getBrandNewDeckAPI().getBrandNewDeck();
-        assertEquals(getBrandNewDeck.getStatus(), HttpStatus.OK);
+        RESTResponse<BrandNewDeckDTO> brandNewDeck = brandNewDeckService.getBrandNewDeckAPI().brandNewDeck();
+        assertEquals(brandNewDeck.getStatus(), HttpStatus.OK);
 
-        String deckId = getBrandNewDeck.getResponseBean().getDeckId();
+        String deckId = brandNewDeck.getResponseBean().getDeckId();
         HashMap<String, Object> params = new HashMap<>();
         params.put("count", numberOfCardsToDraw);
 
         log.info("Get Draw a Card");
-        RESTResponse<DrawCardDTO> getDrawCard = drawCardService.getDrawCardAPI().drawCard(deckId, params);
-        assertEquals(getDrawCard.getStatus(), HttpStatus.OK);
+        RESTResponse<DrawCardDTO> drawCard = drawCardService.getDrawCardAPI().drawCard(deckId, params);
+        assertEquals(drawCard.getStatus(), HttpStatus.OK);
 
-        int numberOfCardsInTheBrandNewDeck = getBrandNewDeck.getResponseBean().getRemaining();
+        int numberOfCardsInTheBrandNewDeck = brandNewDeck.getResponseBean().getRemaining();
         int numberOfCardsAfterDraw = numberOfCardsInTheBrandNewDeck - numberOfCardsToDraw;
-        int actualNumberOfCardsAfterDraw = getDrawCard.getResponseBean().getRemaining();
+        int actualNumberOfCardsAfterDraw = drawCard.getResponseBean().getRemaining();
 
         assertEquals(actualNumberOfCardsAfterDraw, numberOfCardsAfterDraw, "Wrong number of remaining cards after draw");
     }

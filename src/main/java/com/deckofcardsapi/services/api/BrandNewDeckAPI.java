@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class BrandNewDeckAPI extends ResponseService {
 
-    public RESTResponse<BrandNewDeckDTO> getBrandNewDeck() {
+    public RESTResponse<BrandNewDeckDTO> brandNewDeck() {
         log.debug("Sending a request to get a Brand New Deck");
         GetBrandNewDeckRequest request = new GetBrandNewDeckRequest();
         return sendRequest(request, BrandNewDeckDTO.class);

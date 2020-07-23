@@ -17,7 +17,7 @@ public class GetBrandNewDeckTest {
     @Test(description = "[A Brand New Deck] Open a brand new deck of cards")
     public void getBrandNewDeck() {
         log.info("Get Brand New Deck");
-        RESTResponse<BrandNewDeckDTO> getBrandNewDeck = brandNewDeckService.getBrandNewDeckAPI().getBrandNewDeck();
-        assertEquals(getBrandNewDeck.getStatus(), HttpStatus.OK);
+        RESTResponse<BrandNewDeckDTO> brandNewDeck = brandNewDeckService.getBrandNewDeckAPI().brandNewDeck();
+        assertEquals(brandNewDeck.getStatus(), HttpStatus.OK);
     }
 }
