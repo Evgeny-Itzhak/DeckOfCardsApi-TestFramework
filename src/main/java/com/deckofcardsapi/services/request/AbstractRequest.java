@@ -19,25 +19,16 @@ public abstract class AbstractRequest {
     private Map<String, String> queryParameters = new HashMap<>();
     private Object requestBody;
 
-    protected AbstractRequest() {
-        this.httpMethod = HttpMethod.GET;
-    }
-
-    protected AbstractRequest(String url) {
-        this.httpMethod = HttpMethod.GET;
-        this.url = url;
-    }
-
-    public AbstractRequest(EndpointUrl endpointUrl, HttpMethod httpMethod, String deckId) {
-        this.httpMethod = httpMethod;
-        this.endpointUrl = endpointUrl;
-        this.url = baseUrl + deckId + endpointUrl.getUrl();
-    }
-
-    public AbstractRequest(EndpointUrl endpointUrl, HttpMethod httpMethod) {
+    AbstractRequest(EndpointUrl endpointUrl, HttpMethod httpMethod) {
         this.httpMethod = httpMethod;
         this.endpointUrl = endpointUrl;
         this.url = baseUrl + endpointUrl.getUrl();
+    }
+
+    AbstractRequest(EndpointUrl endpointUrl, HttpMethod httpMethod, String deckId) {
+        this.httpMethod = httpMethod;
+        this.endpointUrl = endpointUrl;
+        this.url = baseUrl + deckId + "/" + endpointUrl.getUrl();
     }
 
     private String getFullRequestUrl(EndpointUrl endpointUrl, String deckId) {
@@ -56,7 +47,7 @@ public abstract class AbstractRequest {
         return requestBody;
     }
 
-    protected void setQueryParameters(HashMap<String, Object> params) {
+    void setQueryParameters(HashMap<String, Object> params) {
         for (Map.Entry<String, Object> parameter : params.entrySet()) {
             String key = parameter.getKey();
             String value = parameter.getValue().toString();
