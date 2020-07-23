@@ -4,6 +4,7 @@ package com.deckofcardsapi.services.request;
 import com.deckofcardsapi.utils.enums.EndpointUrl;
 import com.deckofcardsapi.utils.enums.HttpMethod;
 import com.deckofcardsapi.utils.properties.PropertyManager;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -51,6 +52,12 @@ public abstract class AbstractRequest {
         for (Map.Entry<String, Object> parameter : params.entrySet()) {
             String key = parameter.getKey();
             String value = parameter.getValue().toString();
+            if (value.contains("[") || value.contains("]")) {
+                value = value
+                        .replace("[", "")
+                        .replace("]", "")
+                        .replace(StringUtils.SPACE, "");
+            }
             queryParameters.put(key, value);
         }
     }

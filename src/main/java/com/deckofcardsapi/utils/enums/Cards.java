@@ -13,8 +13,7 @@ public enum Cards {
         this.card = card;
     }
 
-    @Override
-    public String toString() {
+    public String getCode() {
         return card;
     }
 }
