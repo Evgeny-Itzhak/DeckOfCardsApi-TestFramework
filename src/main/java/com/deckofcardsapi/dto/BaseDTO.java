@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BaseDTO {
+class BaseDTO {
 
     @JsonProperty("success")
     private Boolean success;
