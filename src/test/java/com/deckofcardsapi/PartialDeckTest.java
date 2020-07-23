@@ -15,7 +15,7 @@ import java.util.*;
 import static org.testng.Assert.assertEquals;
 
 @Slf4j
-public class GetPartialDeckTest {
+public class PartialDeckTest {
 
     private PartialDeckService partialDeckService = new PartialDeckService();
     private DrawCardService drawCardService = new DrawCardService();

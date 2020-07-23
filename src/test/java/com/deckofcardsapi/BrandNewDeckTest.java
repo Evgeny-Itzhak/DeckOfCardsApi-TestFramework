@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 @Slf4j
-public class GetBrandNewDeckTest {
+public class BrandNewDeckTest {
 
     private BrandNewDeckService brandNewDeckService = new BrandNewDeckService();
 

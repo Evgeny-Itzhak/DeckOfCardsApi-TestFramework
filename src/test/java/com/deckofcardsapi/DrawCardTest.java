@@ -15,7 +15,7 @@ import java.util.HashMap;
 import static org.testng.Assert.assertEquals;
 
 @Slf4j
-public class GetDrawCardTest {
+public class DrawCardTest {
 
     private BrandNewDeckService brandNewDeckService = new BrandNewDeckService();
     private DrawCardService drawCardService = new DrawCardService();
