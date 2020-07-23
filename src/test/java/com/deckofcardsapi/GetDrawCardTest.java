@@ -22,7 +22,7 @@ public class GetDrawCardTest {
 
     @DataProvider(name = "queryParameter")
     public Object[][] dataProvider() {
-        return new Object[][]{{53}, {10}, {52}};
+        return new Object[][]{{5}, {10}, {52}};
     }
 
     @Test(description = "[Draw a Card] Draw specified number of cards from the deck", dataProvider = "queryParameter")
