@@ -12,7 +12,7 @@ import static org.testng.Assert.assertEquals;
 @Slf4j
 public class GetBrandNewDeckTest {
 
-    BrandNewDeckService brandNewDeckService = new BrandNewDeckService();
+    private BrandNewDeckService brandNewDeckService = new BrandNewDeckService();
 
     @Test(description = "[A Brand New Deck] Open a brand new deck of cards")
     public void getBrandNewDeck() {
