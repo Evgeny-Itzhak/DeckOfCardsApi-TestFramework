@@ -44,6 +44,8 @@ public class DrawCardTest {
         int numberOfCardsAfterDraw = numberOfCardsInTheBrandNewDeck - numberOfCardsToDraw;
         int actualNumberOfCardsAfterDraw = drawCard.getResponseBean().getRemaining();
 
+        log.info("Validate the number of drawn cards and remained cards in the deck after drawing");
+        assertEquals(drawCard.getResponseBean().getCards().size(), numberOfCardsToDraw, "Wrong number of drawn cards in response");
         assertEquals(actualNumberOfCardsAfterDraw, numberOfCardsAfterDraw, "Wrong number of remaining cards after draw");
     }
 }
