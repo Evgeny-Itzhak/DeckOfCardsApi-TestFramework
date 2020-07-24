@@ -1,0 +1,12 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Deck of cards Smoke Test Suit">
+    <suite-files>
+        <suite-file path="endpoints/brandnewdeck.xml"/>
+        <suite-file path="endpoints/drawcard.xml"/>
+        <suite-file path="endpoints/partialdeck.xml"/>
+        <suite-file path="endpoints/addtopiles.xml"/>
+        <suite-file path="endpoints/drawfrompiles.xml"/>
+    </suite-files>
+</suite>
