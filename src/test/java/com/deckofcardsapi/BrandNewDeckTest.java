@@ -1,23 +1,16 @@
 package com.deckofcardsapi;
 
-import com.deckofcardsapi.dto.BrandNewDeckDTO;
-import com.deckofcardsapi.services.BrandNewDeckService;
-import com.deckofcardsapi.services.response.RESTResponse;
-import com.deckofcardsapi.utils.enums.HttpStatus;
+import com.deckofcardsapi.utils.helpers.DeckHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.assertEquals;
 
 @Slf4j
 public class BrandNewDeckTest {
 
-    private BrandNewDeckService brandNewDeckService = new BrandNewDeckService();
+    private DeckHelper deckHelper = new DeckHelper();
 
     @Test(description = "[A Brand New Deck] Open a brand new deck of cards")
     public void getBrandNewDeck() {
-        log.info("Get Brand New Deck");
-        RESTResponse<BrandNewDeckDTO> brandNewDeck = brandNewDeckService.getBrandNewDeckAPI().brandNewDeck();
-        assertEquals(brandNewDeck.getStatus(), HttpStatus.OK);
+        deckHelper.getBrandNewDeck();
     }
 }

@@ -6,6 +6,7 @@ import com.deckofcardsapi.services.BrandNewDeckService;
 import com.deckofcardsapi.services.DrawCardService;
 import com.deckofcardsapi.services.response.RESTResponse;
 import com.deckofcardsapi.utils.enums.HttpStatus;
+import com.deckofcardsapi.utils.helpers.DeckHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -20,6 +21,8 @@ public class DrawCardTest {
     private BrandNewDeckService brandNewDeckService = new BrandNewDeckService();
     private DrawCardService drawCardService = new DrawCardService();
 
+    private DeckHelper deckHelper = new DeckHelper();
+
     @DataProvider(name = "queryParameter")
     public Object[][] dataProvider() {
         return new Object[][]{{5}, {10}, {52}};
@@ -29,10 +32,8 @@ public class DrawCardTest {
     public void getDrawCard(int numberOfCardsToDraw) {
 
         log.info("Get Brand New Deck");
-        RESTResponse<BrandNewDeckDTO> brandNewDeck = brandNewDeckService.getBrandNewDeckAPI().brandNewDeck();
-        assertEquals(brandNewDeck.getStatus(), HttpStatus.OK);
-
-        String deckId = brandNewDeck.getResponseBean().getDeckId();
+        BrandNewDeckDTO brandNewDeck = deckHelper.getBrandNewDeck();
+        String deckId = brandNewDeck.getDeckId();
         HashMap<String, Object> params = new HashMap<>();
         params.put("count", numberOfCardsToDraw);
 
@@ -40,7 +41,7 @@ public class DrawCardTest {
         RESTResponse<DrawCardDTO> drawCard = drawCardService.getDrawCardAPI().drawCard(deckId, params);
         assertEquals(drawCard.getStatus(), HttpStatus.OK);
 
-        int numberOfCardsInTheBrandNewDeck = brandNewDeck.getResponseBean().getRemaining();
+        int numberOfCardsInTheBrandNewDeck = brandNewDeck.getRemaining();
         int numberOfCardsAfterDraw = numberOfCardsInTheBrandNewDeck - numberOfCardsToDraw;
         int actualNumberOfCardsAfterDraw = drawCard.getResponseBean().getRemaining();
 

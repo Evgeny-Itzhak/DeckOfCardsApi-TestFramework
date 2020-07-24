@@ -1,12 +1,11 @@
 package com.deckofcardsapi;
 
 import com.deckofcardsapi.dto.DrawCardDTO;
-import com.deckofcardsapi.dto.PartialDeckDTO;
 import com.deckofcardsapi.services.DrawCardService;
-import com.deckofcardsapi.services.PartialDeckService;
 import com.deckofcardsapi.services.response.RESTResponse;
 import com.deckofcardsapi.utils.enums.Cards;
 import com.deckofcardsapi.utils.enums.HttpStatus;
+import com.deckofcardsapi.utils.helpers.DeckHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
 
@@ -17,8 +16,8 @@ import static org.testng.Assert.assertEquals;
 @Slf4j
 public class PartialDeckTest {
 
-    private PartialDeckService partialDeckService = new PartialDeckService();
     private DrawCardService drawCardService = new DrawCardService();
+    private DeckHelper deckHelper = new DeckHelper();
 
 
     @Test(description = "[Partial Deck] Create a new specified deck")
@@ -31,11 +30,7 @@ public class PartialDeckTest {
         HashMap<String, Object> params = new HashMap<>();
         params.put("cards", specialCardsList);
 
-        log.info("Get Partial Deck");
-        RESTResponse<PartialDeckDTO> partialDeck = partialDeckService.getPartialDeckAPI().partialDeck(params);
-        assertEquals(partialDeck.getStatus(), HttpStatus.OK);
-
-        String deckId = partialDeck.getResponseBean().getDeckId();
+        String deckId = deckHelper.getPartialDeck(params).getDeckId();
         params.clear();
         params.put("count", specialCardsList.size());
 
