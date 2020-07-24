@@ -5,7 +5,11 @@ public enum EndpointUrl {
     NEW("new/"),
     NEW_SHUFFLE("new/shuffle/"),
     NEW_DRAW("new/draw/"),
-    DRAW("draw/");
+    DRAW("draw/"),
+    PILE("pile/"),
+    ADD("add/"),
+    DRAW_BOTTOM("draw/bottom");
+
 
     private final String url;
 

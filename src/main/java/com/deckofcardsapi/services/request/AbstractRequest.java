@@ -32,6 +32,12 @@ public abstract class AbstractRequest {
         this.url = baseUrl + deckId + "/" + endpointUrl.getUrl();
     }
 
+    AbstractRequest(EndpointUrl endpointUrl, HttpMethod httpMethod, String deckId, String pileName, EndpointUrl postfixUrl) {
+        this.httpMethod = httpMethod;
+        this.endpointUrl = endpointUrl;
+        this.url = baseUrl + deckId + "/" + endpointUrl.getUrl() + pileName + "/" + postfixUrl.getUrl();
+    }
+
     private String getFullRequestUrl(EndpointUrl endpointUrl, String deckId) {
         return baseUrl + deckId + endpointUrl.getUrl();
     }
