@@ -48,4 +48,19 @@ public class DrawCardTest {
         assertEquals(drawCard.getResponseBean().getCards().size(), numberOfCardsToDraw, "Wrong number of drawn cards in response");
         assertEquals(actualNumberOfCardsAfterDraw, numberOfCardsAfterDraw, "Wrong number of remaining cards after draw");
     }
+
+    @Test(description = "[Draw a Card] Draw specified number of cards from the new deck")
+    public void getDrawCardFromNewDeck() {
+
+        int numberOfCardsToDraw = 5;
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("count", numberOfCardsToDraw);
+
+        log.info("Get Draw a Card from the new deck");
+        RESTResponse<DrawCardDTO> drawCard = drawCardService.getDrawCardAPI().drawCard(params);
+        assertEquals(drawCard.getStatus(), HttpStatus.OK);
+
+        log.info("Validate the number of drawn cards");
+        assertEquals(drawCard.getResponseBean().getCards().size(), numberOfCardsToDraw, "Wrong number of drawn cards in response");
+    }
 }

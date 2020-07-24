@@ -14,4 +14,9 @@ public class GetDrawCardRequest extends AbstractRequest {
         super(EndpointUrl.DRAW, HttpMethod.GET, deckId);
         setQueryParameters(params);
     }
+
+    public GetDrawCardRequest(HashMap<String, Object> params) {
+        super(EndpointUrl.NEW_DRAW, HttpMethod.GET);
+        setQueryParameters(params);
+    }
 }

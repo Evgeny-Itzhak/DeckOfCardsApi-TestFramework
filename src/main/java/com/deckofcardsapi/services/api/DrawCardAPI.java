@@ -18,4 +18,11 @@ public class DrawCardAPI extends ResponseService {
         GetDrawCardRequest request = new GetDrawCardRequest(deckId, params);
         return sendRequest(request, DrawCardDTO.class);
     }
+
+    @Step("GET Draw a Card from new deck")
+    public RESTResponse<DrawCardDTO> drawCard(HashMap<String, Object> params) {
+        log.debug("Sending a request to Draw a Card from new deck");
+        GetDrawCardRequest request = new GetDrawCardRequest(params);
+        return sendRequest(request, DrawCardDTO.class);
+    }
 }
