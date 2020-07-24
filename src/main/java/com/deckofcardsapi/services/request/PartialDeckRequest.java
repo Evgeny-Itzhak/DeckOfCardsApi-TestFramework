@@ -7,9 +7,9 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.HashMap;
 
 @Slf4j
-public class GetPartialDeckRequest extends AbstractRequest {
+public class PartialDeckRequest extends AbstractRequest {
 
-    public GetPartialDeckRequest(HashMap<String, Object> params) {
+    public PartialDeckRequest(HashMap<String, Object> params) {
         super(EndpointUrl.NEW_SHUFFLE, HttpMethod.GET);
         setQueryParameters(params);
     }

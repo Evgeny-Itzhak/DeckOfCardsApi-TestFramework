@@ -6,9 +6,9 @@ import com.deckofcardsapi.utils.enums.HttpMethod;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class GetBrandNewDeckRequest extends AbstractRequest {
+public class BrandNewDeckRequest extends AbstractRequest {
 
-    public GetBrandNewDeckRequest() {
+    public BrandNewDeckRequest() {
         super(EndpointUrl.NEW, HttpMethod.GET);
     }
 }
