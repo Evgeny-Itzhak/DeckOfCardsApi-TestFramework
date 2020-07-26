@@ -61,7 +61,7 @@ public class DrawFromPilesTest {
         log.info("Get Draw cards from the bottom of the pile");
         RESTResponse<DrawCardDTO> drawCardsFromTheBottomOFThePile = drawFromPileBottomService.getDrawFromPileBottomAPI().drawFromPileBottom(deckId, PILE_NAME, params);
 
-        log.info("Validate that there are no remaining cards in the pile");
+        log.info("Validate that the number of cards in the pile is decreased");
         String jsonResponseAfterDraw = drawCardsFromTheBottomOFThePile.getRestResponse().jsonPath().getMap("piles").get(PILE_NAME).toString();
         int actualNumberOfRemainingCardsInPileAfterDraw = Integer.parseInt(jsonResponseAfterDraw.split("=")[1].replace("}", ""));
         int numberOfCardsAfterDraw = actualNumberOfRemainingCardsInPile - numberOfCardsToDrawFromTheBottom;
