@@ -8,7 +8,8 @@ public enum EndpointUrl {
     DRAW("draw/"),
     PILE("pile/"),
     ADD("add/"),
-    DRAW_BOTTOM("draw/bottom");
+    DRAW_BOTTOM("draw/bottom"),
+    LIST("list");
 
 
     private final String url;
