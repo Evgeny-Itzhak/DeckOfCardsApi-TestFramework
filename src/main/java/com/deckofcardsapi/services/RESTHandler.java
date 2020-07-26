@@ -74,13 +74,16 @@ public class RESTHandler {
             loggedRequest.append(sj.toString());
         }
         loggedRequest.append("\n");
-        for (String headerName : headers.keySet())
+        for (String headerName : headers.keySet()) {
             loggedRequest
                     .append(headerName)
                     .append(": ")
                     .append(headers.get(headerName))
                     .append("\n");
-        if (requestBody != null) loggedRequest.append(requestBody);
+        }
+        if (requestBody != null) {
+            loggedRequest.append(requestBody);
+        }
         log.info(loggedRequest.toString());
     }
 
