@@ -5,11 +5,13 @@ How to run via Gradle:
 2.preform gradle clean build
 3.preform gradle allureReport
 4.preform gradle allureServe
+5.open Behaviours tab
 
 How to run via Maven:
 1.Open terminal in project directory
 2.preform mvn clean test
 3.preform mvn allure:serve
+4.open Behaviours tab
 
 Summary of the project
 My approach during the writing framework was very simple. At first, I was intended to perform all tasks in the way I know how to do it, and then when it be working I was going to use technologies that were mentioned in the task, that I do not have previous experience working with.
