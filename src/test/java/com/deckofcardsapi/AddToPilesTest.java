@@ -6,6 +6,7 @@ import com.deckofcardsapi.services.AddToPilesService;
 import com.deckofcardsapi.services.DrawCardService;
 import com.deckofcardsapi.services.response.RESTResponse;
 import com.deckofcardsapi.utils.enums.HttpStatus;
+import io.qameta.allure.*;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
 
@@ -15,13 +16,17 @@ import java.util.List;
 
 import static org.testng.Assert.assertEquals;
 
+@Epic("TESTING for http://deckofcardsapi.com/ API")
+@Feature(value = "Adding to Piles endpoint")
 @Slf4j
 public class AddToPilesTest {
 
     private DrawCardService drawCardService = new DrawCardService();
     private AddToPilesService addToPilesService = new AddToPilesService();
 
-
+    @Story(value = "Add drawn cards from the deck to the pile")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Draw cards from the new deck and Add drawn cards to the pile functionality")
     @Test(description = "[Adding to Piles] Add drawn cards to the pile")
     public void addToPiles() {
 

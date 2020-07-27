@@ -6,6 +6,7 @@ import com.deckofcardsapi.services.response.RESTResponse;
 import com.deckofcardsapi.utils.enums.Cards;
 import com.deckofcardsapi.utils.enums.HttpStatus;
 import com.deckofcardsapi.utils.helpers.DeckHelper;
+import io.qameta.allure.*;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
 
@@ -13,6 +14,8 @@ import java.util.*;
 
 import static org.testng.Assert.assertEquals;
 
+@Epic("TESTING for http://deckofcardsapi.com/ API")
+@Feature(value = "Partial Deck endpoint")
 @Slf4j
 public class PartialDeckTest {
 
@@ -20,6 +23,8 @@ public class PartialDeckTest {
     private DeckHelper deckHelper = new DeckHelper();
 
 
+    @Story(value = "Create a Partial Deck with specified cards")
+    @Severity(SeverityLevel.NORMAL)
     @Test(description = "[Partial Deck] Create a new specified deck")
     public void getPartialDeck() {
 

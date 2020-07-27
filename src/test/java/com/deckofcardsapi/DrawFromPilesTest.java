@@ -7,6 +7,7 @@ import com.deckofcardsapi.services.ListingCardsInPilesService;
 import com.deckofcardsapi.services.response.RESTResponse;
 import com.deckofcardsapi.utils.helpers.DeckHelper;
 import com.deckofcardsapi.utils.helpers.PilesHelper;
+import io.qameta.allure.*;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -19,6 +20,8 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 
+@Epic("TESTING for http://deckofcardsapi.com/ API")
+@Feature(value = "Drawing from Piles endpoint")
 @Slf4j
 public class DrawFromPilesTest {
 
@@ -59,6 +62,8 @@ public class DrawFromPilesTest {
         params.put("count", numberOfCardsToDrawFromTheBottom);
     }
 
+    @Story(value = "Draw cards from the bottom of the pile")
+    @Severity(SeverityLevel.MINOR)
     @Test(description = "[Drawing from Piles] Draw cards from the bottom of the pile")
     public void drawFromPileBottom() {
 
