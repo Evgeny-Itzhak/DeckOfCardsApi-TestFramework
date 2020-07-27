@@ -4,6 +4,7 @@ import com.deckofcardsapi.dto.BrandNewDeckDTO;
 import com.deckofcardsapi.dto.DrawCardDTO;
 import com.deckofcardsapi.dto.PartialDeckDTO;
 import com.deckofcardsapi.services.BrandNewDeckService;
+import com.deckofcardsapi.services.DeckInfoService;
 import com.deckofcardsapi.services.DrawCardService;
 import com.deckofcardsapi.services.PartialDeckService;
 import com.deckofcardsapi.services.response.RESTResponse;
@@ -22,6 +23,7 @@ public class DeckHelper {
     private BrandNewDeckService brandNewDeckService = new BrandNewDeckService();
     private DrawCardService drawCardService = new DrawCardService();
     private PartialDeckService partialDeckService = new PartialDeckService();
+    private DeckInfoService deckInfoService = new DeckInfoService();
 
     public BrandNewDeckDTO getBrandNewDeck() {
         log.info("Get Brand New Deck");
@@ -49,5 +51,12 @@ public class DeckHelper {
         RESTResponse<PartialDeckDTO> partialDeck = partialDeckService.getPartialDeckAPI().partialDeck(params);
         assertEquals(partialDeck.getStatus(), HttpStatus.OK);
         return partialDeck.getResponseBean();
+    }
+
+    public BrandNewDeckDTO getDeckInfo(String deckId) {
+        log.info("Get Deck Information");
+        RESTResponse<BrandNewDeckDTO> response = deckInfoService.getDeckInfoAPI().getDeckInformation(deckId);
+        assertEquals(response.getStatus(), HttpStatus.OK);
+        return response.getResponseBean();
     }
 }
