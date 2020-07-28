@@ -2,9 +2,9 @@ DeckOfCardsApi-TestFramework
 
 How to run via Gradle:
 1.Open terminal in project directory
-2.preform gradle clean build
-3.preform gradle allureReport
-4.preform gradle allureServe
+2.preform gradlew clean build
+3.preform gradlew allureReport
+4.preform gradlew allureServe
 5.open Behaviours tab
 
 How to run via Maven:
@@ -15,7 +15,7 @@ How to run via Maven:
 
 Summary of the project
 My approach during the writing framework was very simple. At first, I was intended to perform all tasks in the way I know how to do it, and then when it be working I was going to use technologies that were mentioned in the task, that I do not have previous experience working with.
-So I did the first part and because of the lack of time, I did not use some tech from the task (Cucumber). I know how to implement it, but I need more time to get it done well for all other tests. That's why I've decided to leave it as is.
+So I did the first part and because of the lack of time, I did not use some tech from the task (Cucumber). I know how to implement it (and I did it for one test as an example), but I need more time to get it done well for all other tests. That's why I've decided to leave it as is.
 And as for the Gradle, I did not have any experience with it at all, that why I decided to use Maven (also because it was in all my previous projects). And then after it started work with Maven I have investigated and added Gradle. That's why I have in the project both Maven and Gradle.
 
 Summary about issues
