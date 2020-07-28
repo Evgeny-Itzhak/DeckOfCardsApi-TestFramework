@@ -26,6 +26,11 @@ public abstract class AbstractRequest {
         this.url = baseUrl + endpointUrl.getUrl();
     }
 
+    AbstractRequest(HttpMethod httpMethod, String deckId) {
+        this.httpMethod = httpMethod;
+        this.url = baseUrl + deckId;
+    }
+
     AbstractRequest(EndpointUrl endpointUrl, HttpMethod httpMethod, String deckId) {
         this.httpMethod = httpMethod;
         this.endpointUrl = endpointUrl;
