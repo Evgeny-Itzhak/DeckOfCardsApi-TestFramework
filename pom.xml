@@ -23,7 +23,7 @@
         <lomboc.version>1.18.12</lomboc.version>
         <pl.pragmatists.version>1.0.4</pl.pragmatists.version>
         <owner.version>1.0.12</owner.version>
-        <org.json.version>20200518</org.json.version>
+        <org.json.version>20230227</org.json.version>
         <aspectj.version>1.8.10</aspectj.version>
         <allure.version>2.13.5</allure.version>
         <allure.mvn.version>2.10.0</allure.mvn.version>
